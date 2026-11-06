@@ -6,7 +6,7 @@
   "scripts": {
     "setup": "npm install && npm install --prefix backend && npm install --prefix frontend",
     "dev": "concurrently --names api,web --prefix-colors blue,magenta --kill-others-on-fail \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
-    "test": "npm test --prefix backend",
+    "test": "npm test --prefix backend && npm test --prefix frontend",
     "lint": "npm run lint --prefix frontend",
     "build": "npm run build --prefix frontend"
   },

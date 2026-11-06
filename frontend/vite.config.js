@@ -11,4 +11,9 @@ export default defineConfig({
       '/api': 'http://localhost:4000',
     },
   },
+  // Settings for `npm test` (Vitest). jsdom gives tests a fake browser.
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.js',
+  },
 });
