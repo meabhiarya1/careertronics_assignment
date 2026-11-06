@@ -22,10 +22,10 @@ describe('GET /api/batches', () => {
       batchCode: 'B-2601',
       courseName: 'Full Stack',
       centreName: 'London-HQ',
-      startDate: '2026-01-12',
-      enrolledStudents: 35,
+      startDate: '2026-05-04',
+      enrolledStudents: 22,
       totalCapacity: 35,
-      status: 'Completed',
+      status: 'Running',
     });
   });
 
@@ -62,7 +62,7 @@ describe('GET /api/batches', () => {
       .query({ search: 'full stack', status: 'Running', centre: 'London-HQ' })
       .expect(200);
 
-    expect(getCodes(response)).toEqual(['B-2609']);
+    expect(getCodes(response)).toEqual(['B-2601']);
     expect(response.body.pagination).toEqual({ page: 1, limit: 5, totalRecords: 1, totalPages: 1 });
   });
 
@@ -83,7 +83,7 @@ describe('GET /api/batches', () => {
   it('returns the remaining 4 batches on the last page', async () => {
     const response = await request(app).get('/api/batches?page=5').expect(200);
 
-    expect(getCodes(response)).toEqual(['B-2702', 'B-2703', 'B-2704', 'B-2705']);
+    expect(getCodes(response)).toEqual(['B-2621', 'B-2622', 'B-2623', 'B-2624']);
   });
 
   it('returns an empty list when nothing matches', async () => {
