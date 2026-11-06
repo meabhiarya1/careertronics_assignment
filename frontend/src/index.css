@@ -1,33 +1,16 @@
 @import 'tailwindcss';
 
+/* Brand colours and font taken from the UI reference */
 @theme {
-  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 
-  --animate-progress: progress 1.1s ease-in-out infinite;
-
-  @keyframes progress {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(350%);
-    }
-  }
+  --color-brand-50: #fff5ef;
+  --color-brand-100: #ffe7da;
+  --color-brand-500: #f26b21;
+  --color-brand-600: #dc5714;
+  --color-brand-700: #b8430c;
 }
 
-@layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    @apply bg-slate-50 text-slate-900;
-    font-feature-settings: 'cv11', 'ss01';
-  }
-
-  /* We render our own clear button in the search field. */
-  input[type='search']::-webkit-search-cancel-button {
-    appearance: none;
-  }
+body {
+  @apply bg-gray-50 text-gray-800 antialiased;
 }
